@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class wajp {
+public class fivedigit {
     public static void main(String[] args) {
         int num;
         Scanner inp = new Scanner(System.in);
