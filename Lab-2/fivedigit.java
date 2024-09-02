@@ -8,7 +8,7 @@ public class fivedigit {
         System.out.println("The number is: "+num);
         int num1 = 10000;
         for(int i=0; i<5; i++){
-            System.out.println(" "+num/num1);
+            System.out.print(" "+num/num1);
             num = num%num1;
             num1 = num1/10;
         }
