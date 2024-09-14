@@ -9,9 +9,6 @@ This repository includes all the codes I've written for the **OOP BITS F213** la
 - Classes and Objects
 - Inheritance
 - Polymorphism
-- Encapsulation
-- Abstraction
-- Exception Handling
 
 Each lab assignment demonstrates practical implementations of these concepts using different programming challenges.
 
@@ -20,7 +17,5 @@ Each lab assignment demonstrates practical implementations of these concepts usi
 Here's a quick overview of the repository structure:
 
 - **Lab1/**: Introduction to basic OOP concepts
-  Bookstore using C
 - **Lab2/**: Demonstration of inheritance and polymorphism
 - **Lab3/**: Advanced OOP concepts with practical examples
-- 
