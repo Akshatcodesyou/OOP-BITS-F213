@@ -29,7 +29,7 @@ public class Numberguessgame{
             String name = scanner.nextLine();
             players[i] = new Numberguessgame(name, 0);
             
-            System.out.println("Guess a number " + players[i].name + ": "); // player guessed num
+            System.out.println("Guess a number between 0-9 " + players[i].name + ": "); // player guessed num
             int num = scanner.nextInt();
             scanner.nextLine();
             players[i] = new Numberguessgame(name, num);
@@ -97,7 +97,7 @@ public class Numberguessgame {
             String name = scanner.nextLine();
             players[i] = new Numberguessgame(name, 0);
 
-            System.out.println("Guess a number " + players[i].name + ": ");
+            System.out.println("Guess a number between 0-9 " + players[i].name + ": ");
             int num = scanner.nextInt();
             scanner.nextLine();
             players[i] = new Numberguessgame(name, num);
