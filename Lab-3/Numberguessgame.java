@@ -1,4 +1,4 @@
-// scroll below to see the code without any comments
+// scroll below towards the end to see the code without any comments
 
 
 import java.util.Scanner;
@@ -61,3 +61,64 @@ public class Numberguessgame{
     }
 }
 
+
+
+import java.util.Scanner;
+
+public class Numberguessgame{
+    String name;
+    int num;
+    public Numberguessgame(String name, int num){
+        this.name = name;
+        this.num = num;
+    }
+    public String getName() { 
+        return name;
+    }
+    public int getNum() { 
+        return num;
+    }
+    public static int mainNum;
+    static{
+        mainNum = (int) (Math.random() * 10); 
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Numberguessgame[] players = new Numberguessgame[3];
+
+        for (int i = 0; i < players.length; i++) {
+            System.out.println("Enter the name for player " + (i + 1) + ": "); 
+            String name = scanner.nextLine();
+            players[i] = new Numberguessgame(name, 0);
+            
+            System.out.println("Guess a number " + players[i].name + ": ");
+            int num = scanner.nextInt();
+            scanner.nextLine();
+            players[i] = new Numberguessgame(name, num);
+        }
+
+        System.out.println("Number to be guessed: " + mainNum); 
+
+        int count = 0;
+        for (int i = 0; i < players.length; i++) {
+        if(players[i].getNum() == mainNum){
+            System.out.println(players[i].getName() + " wins");
+            count = count + 1;
+        }
+        }
+
+        if(count == 0){
+            System.out.println("No one wins!");
+        }
+        else if(count == 3){
+            System.out.println("Everyone wins!");
+        }
+
+        System.out.println("\nPlayer Details:");
+        for (int i = 0; i < players.length; i++) {
+            System.out.println("Name = " + players[i].getName() + ", Number = " + players[i].getNum());
+        }
+
+        scanner.close();
+    }
+}
