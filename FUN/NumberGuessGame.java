@@ -1,4 +1,4 @@
-// this program contains some fun colors that show up based on the different outcomes by the program. I used chatgpt for it!!
+// this program contains some fun colors that show up based on the different outcomes by the program and also prints a huge "WINNER" text created using text to ascii. I used chatgpt for it!!
 
 
 import java.util.Scanner;
@@ -37,6 +37,15 @@ public class Numberguessgame {
     public static final String ANSI_BOLD = "\u001B[1m";
     public static final String ANSI_UNDERLINE = "\u001B[4m";
 
+    public static void printWinnerArt() {
+        System.out.println(ANSI_GREEN + 
+            "__        ___                       _\n" +
+            "\\ \\      / (_)_ __  _ __   ___ _ __| |\n" +
+            " \\ \\ /\\ / /| | '_ \\| '_ \\ / _ \\ '__| |\n" +
+            "  \\ V  V / | | | | | | | |  __/ |  |_|\n" +
+            "   \\_/\\_/  |_|_| |_|_| |_|\\___|_|  (_)" + ANSI_RESET);
+    }
+
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         Numberguessgame[] players = new Numberguessgame[3];
@@ -59,6 +68,7 @@ public class Numberguessgame {
         for (int i = 0; i < players.length; i++) {
             if (players[i].getNum() == mainNum) {
                 System.out.println(ANSI_GREEN + players[i].getName() + " wins!" + ANSI_RESET);
+                printWinnerArt(); // Print ASCII art when there's a winner
                 count++;
             }
         }
