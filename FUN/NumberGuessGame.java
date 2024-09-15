@@ -1,3 +1,6 @@
+// this program contains some fun colors that show up based on the different outcomes by the program. I used chatgpt for it!!
+
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
