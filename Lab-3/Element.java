@@ -43,11 +43,5 @@ public class Element {
         }
 
         scanner.close();
-    }
-}
-
-        scanner.close();
-    }
-}
-
-
+    }   
+}   
