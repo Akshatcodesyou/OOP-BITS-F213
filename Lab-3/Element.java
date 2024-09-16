@@ -1,3 +1,4 @@
+//Please scroll below to see which code you may want as I have written different methods for the same problem
 import java.util.Scanner;
 
 public class Element {
