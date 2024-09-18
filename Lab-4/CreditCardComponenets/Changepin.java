@@ -8,10 +8,10 @@ class CreditCard {
 
     public void changepin(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the old pin");
+        System.out.print("Enter the old pin: ");
         int confirmpin = scanner.nextInt();
         if(confirmpin == pin){
-            System.out.println("Enter new pin: ");
+            System.out.print("Enter new pin: ");
             pin = scanner.nextInt();
             scanner.nextLine();
         }
@@ -25,7 +25,7 @@ public class changepin {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Set your pin");
+        System.out.print("Set your pin: ");
         int pin = scanner.nextInt();
         scanner.nextLine();
         CreditCard card = new CreditCard(pin);
@@ -34,7 +34,7 @@ public class changepin {
         
         card.changepin();
 
-        System.out.println("Your pin is " + card.getPin());
+        System.out.print("Your pin is " + card.getPin());
         scanner.close();
     }
 
