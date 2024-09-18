@@ -107,7 +107,7 @@ class CreditCard {
         int amnt = scanner.nextInt();
         scanner.nextLine();
         if(enabled && temppin == pin && amnt <= CreditLimit){
-            System.out.println("Transaction successful, " + amnt + "transferred! " + "Remaining credit: " + (CreditLimit-amnt));
+            System.out.println("Transaction successful, " + amnt + "transferred! " + "Remaining credit: " + (currentCredit-amnt));
         }
         scanner.close();
     }
