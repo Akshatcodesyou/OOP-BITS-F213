@@ -12,9 +12,10 @@ class CreditCard {
         int confirmpin = scanner.nextInt();
         if(confirmpin == pin){
             System.out.print("Enter new pin: ");
-            newPin = scanner.nextInt();
-            pin = newPin;
-            scanner.nextLine();
+            pin = scanner.nextInt();
+            System.out.print("Pin change successful! ");
+        } else {
+            System.out.println("Incorrect old pin.");
         }
         scanner.close();
     }
@@ -31,11 +32,13 @@ public class changepin {
         scanner.nextLine();
         CreditCard card = new CreditCard(pin);
 
-        System.out.println("Your pin is " + pin);
+        System.out.println("Your pin is " + card.getPin());
         
         card.changepin(pin);
 
         System.out.print("Your pin is " + card.getPin());
         scanner.close();
     }
+
 }
+
