@@ -6,13 +6,14 @@ class CreditCard {
         this.pin = pin;
     }
 
-    public void changepin(){
+    public void changepin(int newPin){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the old pin: ");
         int confirmpin = scanner.nextInt();
         if(confirmpin == pin){
             System.out.print("Enter new pin: ");
-            pin = scanner.nextInt();
+            newPin = scanner.nextInt();
+            pin = newPin;
             scanner.nextLine();
         }
         scanner.close();
@@ -32,10 +33,9 @@ public class changepin {
 
         System.out.println("Your pin is " + pin);
         
-        card.changepin();
+        card.changepin(pin);
 
         System.out.print("Your pin is " + card.getPin());
         scanner.close();
     }
-
 }
