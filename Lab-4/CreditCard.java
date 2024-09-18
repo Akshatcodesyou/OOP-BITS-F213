@@ -111,41 +111,41 @@ class CreditCard {
         }
         scanner.close();
     }
-        public void changeCardStatus(boolean enabled){
-            Scanner scanner = new Scanner(System.in);
-            if(enabled == true){
-            System.out.println("Want to disable card? (y/n): ");
-            scanner.nextLine();
-            String input = scanner.nextLine().trim().toLowerCase();
-            switch (input) {
-                case "y":
-                    enabled = false;
-                    break;
-                case "n":
-                    enabled = true;
-                default:
-                    System.out.println("Invalid Input! ");
-                    break;
-            }
-            }
-            else{
-                System.out.println("Want to enable card? (y/n): ");
-            scanner.nextLine();
-            String input = scanner.nextLine().trim().toLowerCase();
-            switch (input) {
-                case "y":
-                    enabled = true;
-                    break;
-                case "n":
-                    enabled = false;
-                default:
-                    System.out.println("Invalid Input! ");
-                    break;
-            }
-            }
+        // public void changeCardStatus(boolean enabled){
+        //     Scanner scanner = new Scanner(System.in);
+        //     if(enabled == true){
+        //     System.out.println("Want to disable card? (y/n): ");
+        //     scanner.nextLine();
+        //     String input = scanner.nextLine().trim().toLowerCase();
+        //     switch (input) {
+        //         case "y":
+        //             enabled = false;
+        //             break;
+        //         case "n":
+        //             enabled = true;
+        //         default:
+        //             System.out.println("Invalid Input! ");
+        //             break;
+        //     }
+        //     }
+        //     else{
+        //         System.out.println("Want to enable card? (y/n): ");
+        //     scanner.nextLine();
+        //     String input = scanner.nextLine().trim().toLowerCase();
+        //     switch (input) {
+        //         case "y":
+        //             enabled = true;
+        //             break;
+        //         case "n":
+        //             enabled = false;
+        //         default:
+        //             System.out.println("Invalid Input! ");
+        //             break;
+        //     }
+        //     }
 
-        scanner.close();
-        }
+        // scanner.close();
+        // }
 }
 
 public class CreditCardTester {
@@ -156,7 +156,7 @@ public class CreditCardTester {
         System.out.println("Card created for: " + myCard.getCardNo());
         myCard.display();
         myCard.transact(scanner);
-        myCard.changeCardStatus(true);
+        // myCard.changeCardStatus(true);
         scanner.close(); 
     }
 }
