@@ -103,60 +103,81 @@ class CreditCard {
         System.out.println("Enter pin: ");
         int temppin = scanner.nextInt();
         scanner.nextLine();
+        if(temppin == pin){
         System.out.println("Enter amount to be transferred: ");
         int amnt = scanner.nextInt();
         scanner.nextLine();
-        if(enabled && temppin == pin && amnt <= CreditLimit){
-            System.out.println("Transaction successful, " + amnt + "transferred! " + "Remaining credit: " + (currentCredit-amnt));
+        if(enabled && amnt <= CreditLimit){
+            System.out.println("Transaction successful, \n" + amnt + " transferred! \n" + "Remaining credit: " + (currentCredit-amnt));
         }
-        scanner.close();
+        else{
+            System.out.println("error! please check if your card status is enabled and amount entered is less than your CreditLimit! ");
+        }
+        }
+        else{
+            System.out.println("Wrong pin! ");
+        }
     }
-        // public void changeCardStatus(boolean enabled){
+        // public void changeCardStatus(){
         //     Scanner scanner = new Scanner(System.in);
-        //     if(enabled == true){
-        //     System.out.println("Want to disable card? (y/n): ");
-        //     scanner.nextLine();
-        //     String input = scanner.nextLine().trim().toLowerCase();
-        //     switch (input) {
-        //         case "y":
-        //             enabled = false;
-        //             break;
-        //         case "n":
-        //             enabled = true;
-        //         default:
-        //             System.out.println("Invalid Input! ");
-        //             break;
-        //     }
-        //     }
-        //     else{
-        //         System.out.println("Want to enable card? (y/n): ");
-        //     scanner.nextLine();
-        //     String input = scanner.nextLine().trim().toLowerCase();
-        //     switch (input) {
-        //         case "y":
-        //             enabled = true;
-        //             break;
-        //         case "n":
-        //             enabled = false;
-        //         default:
-        //             System.out.println("Invalid Input! ");
-        //             break;
-        //     }
-        //     }
-
-        // scanner.close();
+        //     System.out.println("Enable or disable card? (e/d): ");
+        //         String input = scanner.nextLine().trim().toLowerCase();
+        //         scanner.nextLine();
+        //         if(input.equals("e")){
+        //             if(enabled == true){
+        //                 System.out.println("Card already enabled! ");
+        //             }
+        //             else if(enabled == false){
+        //                 System.out.println("Card is now enabled! ");
+        //             }
+        //             else{
+        //                 System.out.println("ERROR404 ");
+        //             }
+        //         }
+        //         else if(input.equals("d")){
+        //             if(enabled == false){
+        //                 System.out.println("Card already disabled! ");
+        //             }
+        //             else if(enabled == true){
+        //                 System.out.println("Card is now disabled! ");
+        //             }
+        //             else{
+        //                 System.out.println("ERROR404 ");
+        //             }
+        //         }
+        //         else{
+        //             System.out.println("Invalid input! ");
+        //         }
+        //     scanner.close();
         // }
 }
-
 public class CreditCardTester {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Creating a new Credit Card...");
         CreditCard myCard = new CreditCard(scanner);
         System.out.println("Card created for: " + myCard.getCardNo());
-        myCard.display();
-        myCard.transact(scanner);
-        // myCard.changeCardStatus(true);
-        scanner.close(); 
+        boolean exit = false;
+        while (!exit) {
+            System.out.print("Display card info? (1) \nTransfer money? (2) \nDisable/enable card? (3) \nExit (4): ");
+            int input = scanner.nextInt();
+            switch (input) {
+                case 1:
+                    myCard.display();
+                    break;
+                case 2:
+                    myCard.transact(scanner);
+                    break;
+                // case 3:
+                //     myCard.changeCardStatus();
+                case 4:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Invalid input! ");
+                    break;
+            }
+        }
+        scanner.close();
     }
 }
