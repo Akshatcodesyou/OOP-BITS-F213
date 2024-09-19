@@ -134,38 +134,38 @@ class CreditCard {
             System.out.println("Wrong pin! ");
         }
     }
-        // public void changeCardStatus(){
-        //     Scanner scanner = new Scanner(System.in);
-        //     System.out.println("Enable or disable card? (e/d): ");
-        //         String input = scanner.nextLine().trim().toLowerCase();
-        //         scanner.nextLine();
-        //         if(input.equals("e")){
-        //             if(enabled == true){
-        //                 System.out.println("Card already enabled! ");
-        //             }
-        //             else if(enabled == false){
-        //                 System.out.println("Card is now enabled! ");
-        //             }
-        //             else{
-        //                 System.out.println("ERROR404 ");
-        //             }
-        //         }
-        //         else if(input.equals("d")){
-        //             if(enabled == false){
-        //                 System.out.println("Card already disabled! ");
-        //             }
-        //             else if(enabled == true){
-        //                 System.out.println("Card is now disabled! ");
-        //             }
-        //             else{
-        //                 System.out.println("ERROR404 ");
-        //             }
-        //         }
-        //         else{
-        //             System.out.println("Invalid input! ");
-        //         }
-        //     scanner.close();
-        // }
+        public void changeCardStatus(){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enable or disable card? (e/d): ");
+                String input = scanner.nextLine().trim().toLowerCase();
+                if(input.equals("e")){
+                    if(enabled == true){
+                        System.out.println("Card already enabled! ");
+                    }
+                    else if(enabled == false){
+                        enabled = true;
+                        System.out.println("Card is now enabled! ");
+                    }
+                    else{
+                        System.out.println("ERROR404 ");
+                    }
+                }
+                else if(input.equals("d")){
+                    if(enabled == false){
+                        System.out.println("Card already disabled! ");
+                    }
+                    else if(enabled == true){
+                        enabled = false;
+                        System.out.println("Card is now disabled! ");
+                    }
+                    else{
+                        System.out.println("ERROR404 ");
+                    }
+                }
+                else{
+                    System.out.println("Invalid input! ");
+                }
+        }
 }
 public class CreditCardTester {
     public static void main(String[] args) {
@@ -184,8 +184,9 @@ public class CreditCardTester {
                 case 2:
                     myCard.transact(scanner);
                     break;
-                // case 3:
-                //     myCard.changeCardStatus();
+                case 3:
+                    myCard.changeCardStatus();
+                    break;
                 case 4:
                     exit = true;
                     break;
@@ -197,4 +198,5 @@ public class CreditCardTester {
         scanner.close();
     }
 }
+
 
