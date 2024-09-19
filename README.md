@@ -25,6 +25,9 @@ Here's a quick overview of the repository structure and the specific topics cove
 - **Lab3/**: Examples involving more objects and arrays
   - **Programs**: Element.java, Numberguessgame.java
 
+- **Lab4/**: Examples involving more objects, arrays and methods
+  - **Programs**: CreditCard.java, Employee.java
+
 ## 🚀 Getting Started
 
 To get started with the codes, clone this repository to your local machine:
