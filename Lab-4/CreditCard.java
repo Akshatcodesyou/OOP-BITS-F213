@@ -46,6 +46,19 @@ class CreditCard {
             System.out.println("Ok! current credit: " + currentCredit);
         }
     }
+    public void CheckPin(int temppin){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter pin: ");
+        temppin = scanner.nextInt();
+        scanner.nextLine();
+        if(temppin == pin){
+            System.out.println("Authentication confirmed. ");
+        }
+        else{
+            System.out.println("Error!");
+        }
+        scanner.close();
+    }
 
     public int pinValid(Scanner scanner) {
         int pin;
@@ -184,3 +197,4 @@ public class CreditCardTester {
         scanner.close();
     }
 }
+
