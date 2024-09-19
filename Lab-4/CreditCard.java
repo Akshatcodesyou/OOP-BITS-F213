@@ -107,11 +107,14 @@ class CreditCard {
         System.out.println("Enter amount to be transferred: ");
         int amnt = scanner.nextInt();
         scanner.nextLine();
-        if(enabled && amnt <= CreditLimit){
+        if(enabled && amnt <= CreditLimit && amnt <= currentCredit){
             System.out.println("Transaction successful, \n" + amnt + " transferred! \n" + "Remaining credit: " + (currentCredit-amnt));
         }
+        else if(amnt >= currentCredit){
+            System.out.println("Insufficient funds! ");
+        }
         else{
-            System.out.println("error! please check if your card status is enabled and amount entered is less than your CreditLimit! ");
+            System.out.println("Error! please check if your card status is enabled and amount entered is less than your CreditLimit! ");
         }
         }
         else{
