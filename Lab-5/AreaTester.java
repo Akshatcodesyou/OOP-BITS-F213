@@ -4,25 +4,26 @@ class Area {
     private float side2;
     private int side;
     private float radius;
+    private double Area;
 
-    public int calc_Area(int side){
+    public void calc_Area(int side){
         this.side = side;
-        return side * side;
+        this.Area =  side * side;
     }
 
-    public double calc_Area(float radius){
+    public void calc_Area(float radius){
         this.radius = radius;
-        return 3.14*radius*radius;
+        this.Area =  3.14*radius*radius;
     }
 
-    public double calc_Area(float side1, float side2){
+    public void calc_Area(float side1, float side2){
         this.side1 = side1;
         this.side2 = side2;
-        return side1*side2;
+        this.Area =  side1*side2;
     }
 
     public void display(){
-        
+        System.out.println("Calculated area: " + Area);
     }
 }
 public class AreaTester {
@@ -35,22 +36,22 @@ public class AreaTester {
                 System.out.println("Enter the side of the square: ");
                 int side = scanner.nextInt();
                 Area areas = new Area();
-                int squareArea = areas.calc_Area(side);
-                System.out.println("The area of the square is: " + squareArea);
+                areas.calc_Area(side);
+                areas.display();
                 break;
             case 2: 
                 System.out.println("Enter the radius of the circle: ");
                 float radius = scanner.nextFloat();
                 Area areac = new Area();
-                double circleArea = areac.calc_Area(radius);
-                System.out.println("The area of the circle is: " + circleArea);
+                areac.calc_Area(radius);
+                areac.display();
             case 3:
                 System.out.println("Enter the both sides of the rectangle: ");
                 float side1 = scanner.nextFloat();
                 float side2 = scanner.nextFloat();
                 Area arear = new Area();
-                double rectangleArea = arear.calc_Area(side1, side2);
-                System.out.println("The area of the circle is: " + rectangleArea);
+                arear.calc_Area(side1, side2);
+                arear.display();
             default:
                 break;
         }
