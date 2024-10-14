@@ -1,63 +1,66 @@
-
-
 import java.util.ArrayList;
+import java.util.Scanner;
+class FlightDest{
+    private String flightNo, destination;
 
-class FlightDest {
-    private String flightNo;
-    private String destination;
-
-    public FlightDest(String flightNo, String destination) {
+    public FlightDest(String flightNo, String destination){
         this.flightNo = flightNo;
         this.destination = destination;
     }
-
-    public String getFlightNo() {
+    public String getFlightNo(){
         return flightNo;
     }
-
-    public String getDestination() {
+    public String getFlightDest(){
         return destination;
     }
 }
-class FlightInfo {
-    private ArrayList<FlightDest> flightDestList;
+class FlightInfo{
+    ArrayList<FlightDest> flightDestList;
 
-    public FlightInfo() {
+    public FlightInfo(){
         flightDestList = new ArrayList<FlightDest>();
     }
-
-    public void addFlightDestPair(String fNo, String dest) {
-        FlightDest flightDest = new FlightDest(fNo, dest);
-        flightDestList.add(flightDest);
+    public void addFlightDestPair(String fNo, String dest){
+        flightDestList.add(new FlightDest(fNo, dest));
     }
-
-    public ArrayList<String> getFlightsDest(String dest) {
-        ArrayList<String> flightNos = new ArrayList<String>();
-        for (FlightDest flightDest : flightDestList) {
-            if (flightDest.getDestination().equalsIgnoreCase(dest)) {
-                flightNos.add(flightDest.getFlightNo());
+    public ArrayList<String> getFlightsDest(String dest){
+        ArrayList<String> flightnos = new ArrayList<>();
+        System.out.println("Flights going to "+dest+" :");
+        for(int i = 0; i<flightDestList.size(); i++){
+            if(flightDestList.get(i).getFlightDest().equals(dest)){
+                flightnos.add(flightDestList.get(i).getFlightNo());
+                System.out.println(flightDestList.get(i).getFlightNo());
             }
         }
-        return flightNos;
+        return flightnos;
     }
 }
 
-public class FlightDestinationTester {
+public class FlightDestinationTester{
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         FlightInfo flightInfo = new FlightInfo();
-        
-        flightInfo.addFlightDestPair("AA123", "New York");
-        flightInfo.addFlightDestPair("BA456", "London");
-        flightInfo.addFlightDestPair("AA789", "New York");
-        flightInfo.addFlightDestPair("DL321", "Chicago");
 
-        ArrayList<String> flightsToNY = flightInfo.getFlightsDest("New York");
-        System.out.println("Flights to New York: " + flightsToNY);
-        
-        ArrayList<String> flightsToLondon = flightInfo.getFlightsDest("London");
-        System.out.println("Flights to London: " + flightsToLondon);
-        
-        ArrayList<String> flightsToChicago = flightInfo.getFlightsDest("Chicago");
-        System.out.println("Flights to Chicago: " + flightsToChicago);
+        flightInfo.addFlightDestPair("AB112", "DUBAI");
+        flightInfo.addFlightDestPair("XY345", "LONDON");
+        flightInfo.addFlightDestPair("LM678", "NEW YORK");
+        flightInfo.addFlightDestPair("QR910", "TOKYO");
+        flightInfo.addFlightDestPair("JK123", "SYDNEY");
+        flightInfo.addFlightDestPair("MN456", "PARIS");
+        flightInfo.addFlightDestPair("OP789", "TORONTO");
+        flightInfo.addFlightDestPair("ST234", "BERLIN");
+        flightInfo.addFlightDestPair("UV567", "SINGAPORE");
+        flightInfo.addFlightDestPair("WX890", "ROME");
+        flightInfo.addFlightDestPair("AB999", "DUBAI");
+        flightInfo.addFlightDestPair("XY888", "LONDON");
+        flightInfo.addFlightDestPair("LM777", "NEW YORK");
+        flightInfo.addFlightDestPair("QR666", "TOKYO");
+        flightInfo.addFlightDestPair("JK555", "SYDNEY");
+        flightInfo.addFlightDestPair("MN444", "PARIS");
+
+        System.out.print("Enter destination: ");
+        String d = scanner.nextLine().toUpperCase();
+        flightInfo.getFlightsDest(d);
+        scanner.close();
     }
 }
