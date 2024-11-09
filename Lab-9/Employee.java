@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class Employeee {
+public class Employee {
     public String yearOfJoining;
     public String discipline;
     public String group;
     public String campus;
     public int idno;
 
-    public Employeee(String yearOfJoining, String discipline, String group, String campus) {
+    public Employee(String yearOfJoining, String discipline, String group, String campus) {
         this.yearOfJoining = yearOfJoining;
         this.discipline = discipline;
         this.group = group;
@@ -86,8 +86,9 @@ public class Employeee {
         System.out.println("Enter campus (P) Pilani, (H) Hyderabad, (G) Goa, (U) Dubai: ");
         String campus = scanner.nextLine();
 
-        Employeee employee = new Employeee(yearOfJoining, discipline, group, campus);
+        Employee employee = new Employee(yearOfJoining, discipline, group, campus);
         employee.getEmail();
         scanner.close();
     }
 }
+
